@@ -24,7 +24,7 @@ window.addEventListener('load', function () {
     setTimeout(function () {
         iziToast.show({
             title: hello,
-            message: '欢迎来到 Alueの搜索页'
+            message: '欢迎来到 Alueの起始页'
         });
     }, 800);
 
