@@ -86,15 +86,12 @@ function time() {
 //获取天气
 //每日限量 100 次
 //请前往 https://www.tianqiapi.com/index/doc?version=v6 申请（免费）
-fetch('http://v1.yiketianqi.com/api?unescape=1&version=v61&appid=61624821&appsecret=vElQ5fc4')
-    .then(response => response.json())
-    .then(data => {
-        //$('#wea_text').html(data.wea + '&nbsp;' + data.tem_night + '℃' + '&nbsp;~&nbsp;' + data.tem_day + '℃')
-        $('#wea_text').text(data.wea)
-        $('#tem1').text(data.tem1)
-        $('#tem2').text(data.tem2)
-    })
-    .catch(console.error)
+export const getWeather = () => {
+  return axios({
+    method: "GET",
+    url: "https://api.oioweb.cn/api/weather/GetWeather",
+  });
+};
     
 //Tab书签页
 $(function () {
