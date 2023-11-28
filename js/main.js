@@ -89,9 +89,10 @@ function time() {
 fetch('https://api.oioweb.cn/api/weather/GetWeather')
     .then(response => response.json())
     .then(data => {
-        $('#wea_text').text(data.condition);
-        $('#tem1').text(data.forecast.tempDay);
-        $('#tem2').text(data.forecast.tempNight);
+        const currentWeather = data.condition;
+        const minTemp = data.forecast.tempDay;
+        const maxTemp = data.forecast.tempNight;
+        $('#weather_info').text(`${currentWeather} ${minTemp}-${maxTemp}`);
     })
     .catch(error => console.error(error));
     
