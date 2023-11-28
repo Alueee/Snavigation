@@ -89,12 +89,11 @@ function time() {
 fetch('https://api.oioweb.cn/api/weather/GetWeather')
     .then(response => response.json())
     .then(data => {
-        //$('#wea_text').html(data.wea + '&nbsp;' + data.tem_night + '℃' + '&nbsp;~&nbsp;' + data.tem_day + '℃')
-        $('#wea_text').text(data.condition)
-        $('#tem1').text(data.forecast.tempDay)
-        $('#tem2').text(data.forecast.tempNight)
+        $('#wea_text').text(data.condition);
+        $('#tem1').text(data.forecast.tempDay);
+        $('#tem2').text(data.forecast.tempNight);
     })
-    .catch(console.error)
+    .catch(error => console.error(error));
     
 //Tab书签页
 $(function () {
